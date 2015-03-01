@@ -2,6 +2,9 @@
 Phody *downloads* the latest photo of the day from high quality source online.<br>
 Just a single command, all stunning photos are ready for your collection.
 
+
+![Sample Screenshot](https://dl.dropboxusercontent.com/u/26146295/phody_screenshot.png?raw=true)
+
 ## Supported source(s):
 * National Geographic
 
