@@ -5,7 +5,7 @@
 # - Photo Of The Day, primarily designed for GeekTool
 #
 # Author: Hoffman Tsui
-# Version: 2015-02-17.0
+# Version: 2015-03-29.0
 #
 ##############################################
 
@@ -25,6 +25,7 @@ f_html=.potd.tmp
 f_pic=.pic.tmp
 f_html=${exec_path}${f_html}
 f_pic=${exec_path}${f_pic}
+f_book=${d_potd}/${fname_tag}_Book.txt
 cd $exec_path
 
 # Input the image source
@@ -67,6 +68,11 @@ if [ -f $new ]; then
     fi
 fi
 cp $f_pic $new
+
+# Log the photo description
+if [[ ! -f $f_book || "" == `grep "$pdes" $f_book` ]]; then
+    echo "$date $pdes" >> $f_book
+fi
 
 # Convert image format if necessary
 if [[ "$pfmt" != "$dfmt" ]]; then
